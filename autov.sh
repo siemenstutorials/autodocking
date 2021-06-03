@@ -51,13 +51,6 @@ echo "-----------------------------------------------------"
 echo "Dockerid = ${Dockerid}"
 echo "-----------------------------------------------------"
 echo
-read -p "Please input Docker name(Default name:v${Dockerid})：" Docker_name
-[ -z "${Docker_name}" ] && Docker_name=v${Dockerid}
-echo
-echo "-----------------------------------------------------"
-echo "Docker_name = ${Docker_name}"
-echo "-----------------------------------------------------"
-echo
 read -p "Please input URL(Default Url:https://www.xjycloud.xyz)：" Dockerurl
 [ -z "${Dockerurl}" ] && Dockerurl=https://www.xjycloud.xyz
 echo
@@ -78,7 +71,7 @@ chmod +x /usr/local/bin/docker-compose
 curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
 clear
 #config
-sed -i "s|SMT|${Docker_name}|" docker-compose.yml
+sed -i "s|SMT|v${Dockerid}|" docker-compose.yml
 sed -i "s|sspankey|${Dockerkey}|" docker-compose.yml
 sed -i "s|68|${Dockerid}|" docker-compose.yml
 sed -i "s|5109|${Dockerid}|" docker-compose.yml
