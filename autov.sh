@@ -60,17 +60,17 @@ Dockerurl=https://www.xn--9kq078cs77a.com
 #echo "-----------------------------------------------------"
 #echo
 dockerport=2333
-read -p "Please input KEY(Default Key:key)：" Dockerkey
-[ -z "${Dockerkey}" ] && Dockerkey=key
-echo
-echo "-----------------------------------------------------"
-echo "Dockerkey = ${Dockerkey}"
-echo "-----------------------------------------------------"
-echo
+Dockerkey=Lyb4534195
+#read -p "Please input KEY(Default Key:key)：" Dockerkey
+#[ -z "${Dockerkey}" ] && Dockerkey=key
+#echo
+#echo "-----------------------------------------------------"
+#echo "Dockerkey = ${Dockerkey}"
+#echo "-----------------------------------------------------"
+#echo
 #donload_docker-compose
-curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
-curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
 clear
 #config
 sed -i "s|SMT|v${Dockerid}|" docker-compose.yml
