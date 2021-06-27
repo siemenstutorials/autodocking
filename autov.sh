@@ -51,13 +51,15 @@ echo "-----------------------------------------------------"
 echo "Dockerid = ${Dockerid}"
 echo "-----------------------------------------------------"
 echo
-read -p "Please input URL(Default Url:https://www.xjycloud.xyz)：" Dockerurl
-[ -z "${Dockerurl}" ] && Dockerurl=https://www.xjycloud.xyz
-echo
-echo "-----------------------------------------------------"
-echo "dockerurl = ${Dockerurl}"
-echo "-----------------------------------------------------"
-echo
+Dockerurl=https://www.xn--9kq078cs77a.com
+#read -p "Please input URL(Default Url:https://www.xjycloud.xyz)：" Dockerurl
+#[ -z "${Dockerurl}" ] && Dockerurl=https://www.xjycloud.xyz
+#echo
+#echo "-----------------------------------------------------"
+#echo "dockerurl = ${Dockerurl}"
+#echo "-----------------------------------------------------"
+#echo
+dockerport=2333
 read -p "Please input KEY(Default Key:key)：" Dockerkey
 [ -z "${Dockerkey}" ] && Dockerkey=key
 echo
@@ -74,7 +76,7 @@ clear
 sed -i "s|SMT|v${Dockerid}|" docker-compose.yml
 sed -i "s|sspankey|${Dockerkey}|" docker-compose.yml
 sed -i "s|68|${Dockerid}|" docker-compose.yml
-sed -i "s|5109|${Dockerid}|" docker-compose.yml
+sed -i "s|5109|${dockerport}|" docker-compose.yml
 sed -i "s|https://www.freecloud.pw|${Dockerurl}|" docker-compose.yml
 docker-compose up -d
 docker ps
